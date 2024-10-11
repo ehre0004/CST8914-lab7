@@ -286,8 +286,10 @@ article p {
     <div class="newsletter">
       <div class="container">
         <h3>Like the Funion? Consider joining our newsletter!</h3>
-        <input type="text">
-        <button type="button" onsubmit="getFocus()">Sign up<!--No.5 Turned onfocus to onsubmit--></button></div>
+        <form method="post" onsubmit="getFocus()">
+          <input type="text">
+          <button type="button">Sign up<!--No.5 Turned onfocus to onsubmit--></button>
+        </form>
       </div>
     </div>
   </footer>
