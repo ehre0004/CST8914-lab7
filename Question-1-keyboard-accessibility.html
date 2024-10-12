@@ -285,9 +285,9 @@ article p {
   <!-- No.4 Moved newsletter signup div to footer at bottom of html file -->
     <div class="newsletter">
       <div class="container">
-        <h3>Like the Funion? Consider joining our newsletter!</h3>
-          <label style="width:1px; height:1px;" for="newsletter_email">Email</label> <input id="newsletter_email" type="email" placeholder="your_email@somewhere.com">
-          <button type="button" onclick="getFocus()">Sign up<!--No.5 Turned onfocus to onclick--></button>
+        <h3 id="newsletter_desc">Like the Funion? Consider joining our newsletter!</h3>
+          <label style="width:1px; height:1px;" for="newsletter_email">Your email:</label> <input id="newsletter_email" aria-describedby="newsletter_desc" type="email" placeholder="your_email@somewhere.com">
+          <button type="submit" onsubmit="getFocus()">Sign up<!--No.5 Turned onfocus to onclick--></button>
       </div>
     </div>
   </footer>
