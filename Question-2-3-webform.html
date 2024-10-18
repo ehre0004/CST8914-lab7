@@ -133,7 +133,9 @@
               $referencedElement = $input;
             }
       // R.G. hint: fix next line ;)
-            $error = $('<a id="' + input + '_description" class="error">' + message + '</a>'); // Note: Added id="x_description" so that the aria-describedby function using Javascript will connect the form field to the error message.
+            $error = $('<a id="' + input + '_description" class="error" tabindex="0">' + message + '</a>');
+            // Note: Added id="x_description" so that the aria-describedby function using Javascript will connect the form field to the error message.
+            //       Added tabindex="0" so links were focusable by keyboard
             $error.click(function (e) {
               // If we rely on the link's href pointing to the input's ID, it doesn't trigger forms mode in screen readers
               $referencedElement.focus();
