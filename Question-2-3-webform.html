@@ -35,17 +35,19 @@
         <fieldset>
           <legend>About You</legend>
           <div class="control">
-            <label id="lbl-name" for="name">Full name <span class="required">(required)</span></label><input id="name" name="name" type="text" />
+            <label id="lbl-name" for="name">Full name <span class="required">(required)</span>:</label>
+            <input id="name" name="name" type="text" required aria-required="true" />
           </div>
           <div class="control">
-            <label id="lbl-bio" for="biography">Biography <span class="required">(required)</span></label><textarea id="biography" name="biography" type="text" aria-describedby="bio-instructions"></textarea>
+            <label id="lbl-bio" for="biography">Biography <span class="required">(required)</span>:</label>
+            <textarea id="biography" name="biography" type="text" aria-describedby="bio-instructions" required aria-required="true"></textarea>
             <p id="bio-instructions">Include examples on your skills in JavaScript.</p>
           </div>
         </fieldset>
         
         <fieldset><legend>Gender <span class="required">(required)</span></legend>
           <div class="control">
-            <label><input id="gender_male" name="gender" type="radio" value="male" />Male</label>
+            <label><input id="gender_male" name="gender" type="radio" value="male"  />Male</label>
           </div>
           <div class="control">
             <label><input id="gender_female" name="gender" type="radio" value="female" />Female</label>
@@ -84,7 +86,7 @@
       
           if ((value = $.urlParam(input)) === null) {
             if ($('fieldset.errors').length === 0) {
-              $('form').prepend('<fieldset class="errors"><legend>Errors</legend><ul></ul></fieldset>');
+              $('form').prepend('<fieldset id="errorlist" class="errors"><legend>Errors</legend><ul></ul></fieldset>');
             }
       
             $referencedElement = null;
@@ -100,7 +102,7 @@
               $referencedElement = $input;
             }
       // R.G. hint: fix next line ;)
-            $error = $('<a id="ctrl-'+ input +'">' + message + '</a>');
+            $error = $('<a tabindex="0">' + message + '</a>');
             $error.click(function (e) {
               // If we rely on the link's href pointing to the input's ID, it doesn't trigger forms mode in screen readers
               $referencedElement.focus();
