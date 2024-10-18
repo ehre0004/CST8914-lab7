@@ -29,23 +29,24 @@
         <h1>Feedback form</h1>
     <form>
         <div class="control">
-          <label>Full name <span class="required">*</span></label><input id="name" name="name" type="text" />
+          <label>Full name <span class="required">*</span><input id="name" name="name" type="text" /></label>
         </div>
         <div class="control">
-          <label>Biography</label><textarea id="biography" name="biography" type="text"></textarea>
-          <span>Include examples on your skills in JavaScript.</span>
+          <label>Biography <textarea id="biography" name="biography" type="text" aria-describedby="bio-instructions"></textarea></label>
+          <span id="bio-instructions">Include examples on your skills in JavaScript.</span>
         </div>
         
-          <div>Gender</div>
+        <fieldset><legend>Gender</legend>
           <div class="control">
-            <input id="gender_male" name="gender" type="radio" value="male" /><label>Male</label>
+            <label><input id="gender_male" name="gender" type="radio" value="male" />Male</label>
           </div>
           <div class="control">
-            <input id="gender_female" name="gender" type="radio" value="female" /><label>Female</label>
+            <label><input id="gender_female" name="gender" type="radio" value="female" />Female</label>
           </div>
+        </fieldset>
         
         <div class="control">
-          <input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" /><label>I accept the terms and conditions</label>
+          <label><input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" />I accept the terms and conditions</label>
         </div>
         <div class="control">
           <input name="validate" type="hidden" value="1" /><input type="submit" value="Register" />
