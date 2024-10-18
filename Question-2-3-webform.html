@@ -27,7 +27,17 @@
     
     fieldset ul {
       margin: 0;
-    }</style>
+    }
+
+    .wb-inv {
+      clip: rect(1px,1px,1px,1px);
+      height: 1px;
+      margin: 0;
+      overflow: hidden;
+      position: absolute;
+      width: 1px;
+    }
+</style>
     </head>
     <body>
         <h1>Feedback form</h1>
@@ -36,15 +46,17 @@
           <legend>Personal Details</legend>
           <div class="control">
             <label id="lbl-name" for="name">Full name <span class="required">(required)</span>:</label>
-            <input id="name" name="name" type="text" required aria-required="true" />
+            <p id="name-instructions" class="wb-inv">Enter your first and last name.</p>
+            <input id="name" name="name" type="text" aria-describedby="name-instructions" required aria-required="true" />
           </div>
           <div class="control">
             <label id="lbl-bio" for="biography">Biography <span class="required">(required)</span>:</label>
+            <p id="bio-instructions">Enter a short description of yourself and your skills. Include examples on your skills in JavaScript.</p>
             <textarea id="biography" name="biography" type="text" aria-describedby="bio-instructions" required aria-required="true"></textarea>
-            <p id="bio-instructions">Include examples on your skills in JavaScript.</p>
           </div>
         
         <fieldset><legend>Gender <span class="required">(required)</span></legend>
+          <p id="gender-instructions" class="wb-inv">Please choose either male or female.</p>
           <div class="control">
             <label><input id="gender_male" name="gender" type="radio" value="male"  />Male</label>
           </div>
