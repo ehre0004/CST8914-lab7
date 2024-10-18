@@ -135,7 +135,7 @@
       
           if ((value = $.urlParam(input)) === null) {
             if ($('fieldset.errors').length === 0) {
-              $('form').prepend('<fieldset class="errors"><legend id="errorlist" aria-live="assertive">Errors</legend><ul></ul></fieldset>');
+              $('form').prepend('<fieldset class="errors"><legend><a id="errorlist">Errors</a></legend><ul></ul></fieldset>');
             }
       
             $referencedElement = null;
