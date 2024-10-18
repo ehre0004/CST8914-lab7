@@ -33,6 +33,11 @@
       border-color: red;
       box-shadow: 0px 0px 6px red;
     }
+
+    fieldset.showerror input {
+      border-color: red;
+      box-shadow: 0px 0px 6px red;
+    }
     
     fieldset ul {
       margin: 0;
@@ -137,9 +142,11 @@
               $fieldset = $input.closest('fieldset');
               $elementToDescribe = $fieldset;
               $referencedElement = $input.filter(':first');
+              $fieldset.addClass('showerror');
             } else {
               $elementToDescribe = $input;
               $referencedElement = $input;
+              $referencedElement.addClass('showerror');
             }
       // R.G. hint: fix next line ;)
             $error = $('<a id="' + input + '_description" class="error" tabindex="0">' + message + '</a>');
@@ -147,7 +154,7 @@
             //       Added tabindex="0" so links were focusable by keyboard
             $error.click(function (e) {
               // If we rely on the link's href pointing to the input's ID, it doesn't trigger forms mode in screen readers
-              $referencedElement.focus().addClass("showerror");
+              $referencedElement.focus();
               return e.preventDefault();
             });
             $elementToDescribe.attr('aria-describedby', input + '_description');
