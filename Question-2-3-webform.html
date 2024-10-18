@@ -32,11 +32,15 @@
     input.showerror {
       border-color: red;
       box-shadow: 0px 0px 6px red;
-    }
+    } /* for showing red border/shadow on inputs with errors */
 
     fieldset.showerror input {
       border-color: red;
       box-shadow: 0px 0px 6px red;
+    } /* for showing red border/shadow on inputs with errors */
+
+    span.showerror {
+      color: red;
     }
     
     fieldset ul {
@@ -143,10 +147,12 @@
               $elementToDescribe = $fieldset;
               $referencedElement = $input.filter(':first');
               $fieldset.addClass('showerror');
+              $fieldset.children('legend').append(' <span class="showerror"> Error</span>')
             } else {
               $elementToDescribe = $input;
               $referencedElement = $input;
               $referencedElement.addClass('showerror');
+              $referencedElement.after(' <span class="showerror"> Error</span>')
             }
       // R.G. hint: fix next line ;)
             $error = $('<a id="' + input + '_description" class="error" tabindex="0">' + message + '</a>');
