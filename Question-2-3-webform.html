@@ -24,6 +24,15 @@
     .error, .required {
       color: red;
     }
+
+    .error {
+      cursor: pointer;
+    }
+
+    input.showerror {
+      border-color: red;
+      box-shadow: 0px 0px 6px red;
+    }
     
     fieldset ul {
       margin: 0;
@@ -141,7 +150,7 @@
               $referencedElement.focus();
               return e.preventDefault();
             });
-            $elementToDescribe.attr('aria-describedby', input + '_description');
+            $elementToDescribe.attr('aria-describedby', input + '_description').addClass("showerror");
             $errorContainer.append('<li>').find('li:last').append($error);
       
             if ($(':not(form):focus').length === 0) {
