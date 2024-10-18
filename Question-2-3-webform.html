@@ -135,7 +135,7 @@
       
           if ((value = $.urlParam(input)) === null) {
             if ($('fieldset.errors').length === 0) {
-              $('form').prepend('<fieldset class="errors"><legend><a id="errorlist">Errors</a></legend><ul></ul></fieldset>');
+              $('form').prepend('<fieldset id="errorlist" class="errors"><legend>Errors</legend><ul></ul></fieldset>');
             }
       
             $referencedElement = null;
@@ -168,7 +168,7 @@
       
             if ($(':not(form):focus').length === 0) {
               // See https://stackoverflow.com/questions/46134247/jquery-setting-focus-doesnt-work-in-ie11/
-              $('#errorlist').children(':first').focus(); // from the above stackoverflow question about internet explorer 11.
+              $('#errorlist').children('ul').first('li').focus(); // from the above stackoverflow question about internet explorer 11.
             }
           } else {
             if ($input.is(':checkbox')) {
