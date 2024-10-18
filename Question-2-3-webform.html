@@ -33,7 +33,7 @@
         <h1>Feedback form</h1>
     <form>
         <fieldset>
-          <legend>About You</legend>
+          <legend>Personal Details</legend>
           <div class="control">
             <label id="lbl-name" for="name">Full name <span class="required">(required)</span>:</label>
             <input id="name" name="name" type="text" required aria-required="true" />
@@ -43,7 +43,6 @@
             <textarea id="biography" name="biography" type="text" aria-describedby="bio-instructions" required aria-required="true"></textarea>
             <p id="bio-instructions">Include examples on your skills in JavaScript.</p>
           </div>
-        </fieldset>
         
         <fieldset><legend>Gender <span class="required">(required)</span></legend>
           <div class="control">
@@ -60,6 +59,7 @@
         <div class="control">
           <input name="validate" type="hidden" value="1" /><input type="submit" value="Register" />
         </div>
+      </fieldset>
       </form>
       
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
