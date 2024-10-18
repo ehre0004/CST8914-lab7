@@ -12,6 +12,10 @@
       width: 120px;
       vertical-align: top;
     }
+
+    label.terms {
+      width: auto;
+    }
     
     input + label {
       width: auto;
@@ -29,11 +33,11 @@
         <h1>Feedback form</h1>
     <form>
         <div class="control">
-          <label>Full name <span class="required">*</span><input id="name" name="name" type="text" /></label>
+          <label>Full name <span class="required">(required)</span><input id="name" name="name" type="text" required /></label>
         </div>
         <div class="control">
           <label>Biography <textarea id="biography" name="biography" type="text" aria-describedby="bio-instructions"></textarea></label>
-          <div id="bio-instructions">Include examples on your skills in JavaScript.</div>
+          <p id="bio-instructions">Include examples on your skills in JavaScript.</p>
         </div>
         
         <fieldset><legend>Gender</legend>
@@ -46,7 +50,7 @@
         </fieldset>
         
         <div class="control">
-          <label><input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" />I accept the terms and conditions</label>
+          <label class="terms"><input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" />I accept the terms and conditions</label>
         </div>
         <div class="control">
           <input name="validate" type="hidden" value="1" /><input type="submit" value="Register" />
