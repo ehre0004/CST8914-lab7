@@ -32,13 +32,16 @@
     <body>
         <h1>Feedback form</h1>
     <form>
-        <div class="control">
-          <label id="lbl-name" for="name">Full name <span class="required">(required)</span></label><input id="name" name="name" type="text" />
-        </div>
-        <div class="control">
-          <label id="lbl-bio" for="biography">Biography <span class="required">(required)</span></label><textarea id="biography" name="biography" type="text" aria-describedby="bio-instructions"></textarea>
-          <p id="bio-instructions">Include examples on your skills in JavaScript.</p>
-        </div>
+        <fieldset>
+          <legend>About You</legend>
+          <div class="control">
+            <label id="lbl-name" for="name">Full name <span class="required">(required)</span></label><input id="name" name="name" type="text" />
+          </div>
+          <div class="control">
+            <label id="lbl-bio" for="biography">Biography <span class="required">(required)</span></label><textarea id="biography" name="biography" type="text" aria-describedby="bio-instructions"></textarea>
+            <p id="bio-instructions">Include examples on your skills in JavaScript.</p>
+          </div>
+        </fieldset>
         
         <fieldset><legend>Gender <span class="required">(required)</span></legend>
           <div class="control">
