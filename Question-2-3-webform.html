@@ -135,7 +135,7 @@
       
           if ((value = $.urlParam(input)) === null) {
             if ($('fieldset.errors').length === 0) {
-              $('form').prepend('<fieldset id="errorlist" class="errors"><legend>Errors</legend><ul></ul></fieldset>');
+              $('form').prepend('<fieldset class="errors"><legend>Errors</legend><ul></ul></fieldset>');
             }
       
             $referencedElement = null;
@@ -160,7 +160,7 @@
             //       Added tabindex="0" so links were focusable by keyboard
             $error.click(function (e) {
               // If we rely on the link's href pointing to the input's ID, it doesn't trigger forms mode in screen readers
-              $referencedElement.focus();
+              window.setTimeout(function () {$referencedElement.focus()}, 0);
               return e.preventDefault();
             });
             $elementToDescribe.attr('aria-describedby', input + '_description');
